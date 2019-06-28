@@ -1,14 +1,11 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
-
+import { Text, Image } from "react-native";
+import Card from "./Card";
 const AlbumDetail = props => {
   return (
-    <View>
+    <Card>
       <Text>{props.record.title}</Text>
-      <Text>{props.record.artist}</Text>
-      <Text>{props.record.url}</Text>
-      <Image>{props.record.image}</Image>
-    </View>
+    </Card>
   );
 };
 
