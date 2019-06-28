@@ -5,7 +5,7 @@ import CardSection from "./CardSection";
 import Button from "./Button";
 
 const AlbumDetail = ({ record }) => {
-  const { title, artist, thumbnail_image, image } = record;
+  const { title, artist, thumbnail_image, image, url } = record;
   const {
     thumbnailStyle,
     thumbnailContainerStyle,
@@ -31,7 +31,7 @@ const AlbumDetail = ({ record }) => {
       </CardSection>
 
       <CardSection>
-        <Button onPress={() => console.log(title)} />
+        <Button onPress={() => Linking.openURL(url)} />
       </CardSection>
     </Card>
   );
