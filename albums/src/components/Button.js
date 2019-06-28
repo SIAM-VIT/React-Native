@@ -1,8 +1,35 @@
 import React from "react";
-import { Button, View, Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 
-const Button = () => {
-  return <TouchableOpacity>Click Me...</TouchableOpacity>;
+const Button = ({ onPress }) => {
+  const { buttonStyle, textStyle } = styles;
+
+  return (
+    <TouchableOpacity onPress={onPress} style={buttonStyle}>
+      <Text style={textStyle}>Buy Now!!!</Text>
+    </TouchableOpacity>
+  );
+};
+
+const styles = {
+  textStyle: {
+    alignSelf: "center",
+    fontSize: 16,
+    fontWeight: "600",
+    paddingTop: 10,
+    paddingBottom: 10,
+    color: "#007aff"
+  },
+  buttonStyle: {
+    flex: 1,
+    alignSelf: "stretch",
+    backgroundColor: "#fff",
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: "#007aff",
+    marginLeft: 5,
+    marginRight: 5
+  }
 };
 
 export default Button;
