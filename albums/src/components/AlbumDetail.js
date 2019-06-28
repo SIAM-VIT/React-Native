@@ -4,19 +4,29 @@ import Card from "./Card";
 import CardSection from "./CardSection";
 
 const AlbumDetail = ({ record }) => {
-  const { title, artist, thumbnail_image } = record;
-  const { thumbnailStyle, headerContentStyle } = styles;
+  const { title, artist, thumbnail_image, image } = record;
+  const {
+    thumbnailStyle,
+    thumbnailContainerStyle,
+    headerContentStyle,
+    headerTextStyle,
+    recordStyle
+  } = styles;
 
   return (
     <Card>
       <CardSection>
-        <View>
+        <View style={thumbnailContainerStyle}>
           <Image style={thumbnailStyle} source={{ uri: thumbnail_image }} />
         </View>
         <View style={headerContentStyle}>
-          <Text>{title}</Text>
+          <Text style={headerTextStyle}>{title}</Text>
           <Text>{artist}</Text>
         </View>
+      </CardSection>
+
+      <CardSection>
+        <Image source={{ uri: image }} style={recordStyle} />
       </CardSection>
     </Card>
   );
@@ -24,12 +34,26 @@ const AlbumDetail = ({ record }) => {
 
 const styles = {
   headerContentStyle: {
-    flexDirection: "row",
-    justifyContent: "flex-start"
+    flexDirection: "column",
+    justifyContent: "space-around"
+  },
+  headerTextStyle: {
+    fontSize: 18
   },
   thumbnailStyle: {
     height: 50,
     width: 50
+  },
+  thumbnailContainerStyle: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: 10,
+    marginRight: 10
+  },
+  recordStyle: {
+    height: 300,
+    flex: 1,
+    width: null
   }
 };
 
