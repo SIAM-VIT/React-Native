@@ -5,10 +5,9 @@ import {Header} from './components/common';
 import LoginForm from './components/LoginForm';
 
 class App extends Component{
-    //Life Cycle Method
-componentDidMount(){
-    
-  // Your web app's Firebase configuration
+        //Life Cycle Method
+componentDidMount()
+    {   // Your web app's Firebase configuration
         var firebaseConfig = {
             apiKey: "AIzaSyBFf9wwML6O6Dpp65jd_4LO-6NWqF6fyjk",
             authDomain: "authentication-ca1da.firebaseapp.com",
@@ -20,7 +19,7 @@ componentDidMount(){
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        }
+    }
 
     render(){
         return(
