@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
-import {Button , Card, CardSection, Input} from './common';
+import {Button , Card, CardSection, Input, Spinner} from './common';
 import firebase from 'firebase';
 import {Text} from 'react-native';
 
 class LoginForm extends Component{
-    state = { email: '', password:'', error:'' };
+    state = { email: '', password:'', error:'', loading:false };
     
     onButtonPress(){
         const { email, password} = this.state;
