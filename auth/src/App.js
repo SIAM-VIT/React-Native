@@ -36,7 +36,7 @@ componentDidMount()
                 switch(this.state.loggedIn){
                     case true:
                         return (
-                        <Button onPress={()=>firebase.auth.signOut()}>
+                        <Button onPress={()=>firebase.auth().signOut()}>
                             Log Out
                         </Button>
                     );
@@ -51,7 +51,9 @@ componentDidMount()
                 return(
                     <View>
                         <Header headerText="Authentication" ></Header>
-                        {this.renderContent()}
+                     
+                            {this.renderContent()}
+                       
                     </View>
                 );
             }
