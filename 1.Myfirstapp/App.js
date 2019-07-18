@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 
 export default class App extends Component {
   state = {
-    placeName: " "
+    placeName: ""
   };
 
   placeNameChangeHandler = val => {
@@ -15,13 +15,15 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hi I am Adhikansh Mittal</Text>
-        <TextInput
-          style={styles.textInputStyle}
-          value={this.state.placeName}
-          onChangeText={this.placeNameChangeHandler}
-          placeholder="An Awesome Place"
-        />
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.textInputStyle}
+            value={this.state.placeName}
+            placeholder="An Awesome Place"
+            onChangeText={this.placeNameChangeHandler}
+          />
+          <Button title="Add" style={styles.placeButton} />
+        </View>
       </View>
     );
   }
@@ -35,9 +37,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start"
   },
+  inputContainer: {
+    // flex: 1,
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
   textInputStyle: {
-    width: 300,
     borderColor: "black",
-    borderWidth: 1
+    borderWidth: 1,
+    width: "70%"
+  },
+  placeButton: {
+    width: "30%"
   }
 });
