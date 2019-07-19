@@ -30,6 +30,16 @@ export default class App extends Component {
     });
   };
 
+  onItemDeleted = index => {
+    this.setState(prevState => {
+      return {
+        places: prevState.places.filter((place, i) => {
+          return i != index;
+        })
+      };
+    });
+  };
+
   render() {
     const placesOutput = this.state.places.map((place, i) => {
       return (
@@ -37,7 +47,8 @@ export default class App extends Component {
           key={i}
           placeName={place}
           onItemPressed={() => {
-            alert("Item pressed - ID:" + i);
+            // alert("Item pressed - ID:" + i);
+            this.onItemDeleted(i);
           }}
         />
       );
