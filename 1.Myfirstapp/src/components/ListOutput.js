@@ -1,11 +1,11 @@
 import React from "react";
-import { View, StyleSheet, Touchable } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 
 const ListOutput = props => {
   return (
-    <View style={styles.OutputContainer}>
+    <ScrollView style={styles.OutputContainer}>
       <View style={styles.ListContainer}>{props.placesOutput}</View>
-    </View>
+    </ScrollView>
   );
 };
 
