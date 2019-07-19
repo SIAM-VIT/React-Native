@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
+
+import ListItem from "./src/components/ListItem";
+import TextInputItem from "./src/components/TextInput";
+import ButtonInput from "./src/components/ButtonItem";
+import ListOutput from "./src/components/ListOutput";
 
 export default class App extends Component {
   state = {
@@ -18,6 +23,7 @@ export default class App extends Component {
       return;
     }
     this.setState(prevState => {
+      console.log(this.state.places);
       return {
         places: prevState.places.concat(prevState.placeName)
       };
@@ -26,24 +32,18 @@ export default class App extends Component {
 
   render() {
     const placesOutput = this.state.places.map((place, i) => {
-      <Text key={i}>{place}</Text>;
+      return <ListItem key={i} placeName={place} />;
     });
     return (
       <View style={styles.container}>
         <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.textInputStyle}
-            value={this.state.placeName}
-            placeholder="An Awesome Place"
-            onChangeText={this.placeNameChangeHandler}
+          <TextInputItem
+            placeName={this.state.placeName}
+            placeNameChangeHandler={this.placeNameChangeHandler}
           />
-          <Button
-            title="Add"
-            style={styles.placeButton}
-            onPress={this.placeSubmitHandler}
-          />
+          <ButtonInput placeSubmitHandler={this.placeSubmitHandler} />
         </View>
-        <View>{placesOutput}</View>
+        <ListOutput placesOutput={placesOutput} />
       </View>
     );
   }
@@ -51,7 +51,7 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     padding: 20,
     backgroundColor: "#fff",
     alignItems: "center",
@@ -63,13 +63,5 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "space-between",
     alignItems: "center"
-  },
-  textInputStyle: {
-    borderColor: "black",
-    borderWidth: 1,
-    width: "70%"
-  },
-  placeButton: {
-    width: "30%"
   }
 });
