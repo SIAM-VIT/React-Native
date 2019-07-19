@@ -11,3 +11,12 @@ Not even close to all CSS properties and features are supported therefore.
 If you want to get a full list about the supported properties, the following cheat sheet will be useful to you: <a href="https://github.com/vhpoet/react-native-styling-cheat-sheet">https://github.com/vhpoet/react-native-styling-cheat-sheet</a>
 
 If you want to learn more about Flexbox, don't miss this awesome article: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>
+
+### UseFull Resources
+
+<ul>
+<li>Understand the Basics: <a href="https://github.com/react-community/create-react-native-app">https://github.com/react-community/create-react-native-app</a></li>
+<li>Understand Flexbox: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></li>
+<li>More about images: <a href="https://facebook.github.io/react-native/docs/images.html">https://facebook.github.io/react-native/docs/images.html</a>
+</li>
+</ul>
