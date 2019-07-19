@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, View, Touchable } from "react-native";
 
 import ListItem from "./src/components/ListItem";
 import TextInputItem from "./src/components/TextInput";
@@ -32,7 +32,15 @@ export default class App extends Component {
 
   render() {
     const placesOutput = this.state.places.map((place, i) => {
-      return <ListItem key={i} placeName={place} />;
+      return (
+        <ListItem
+          key={i}
+          placeName={place}
+          onItemPressed={() => {
+            alert("Item pressed - ID:" + i);
+          }}
+        />
+      );
     });
     return (
       <View style={styles.container}>
