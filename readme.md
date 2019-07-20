@@ -20,3 +20,11 @@ If you want to learn more about Flexbox, don't miss this awesome article: <a hre
 <li>More about images: <a href="https://facebook.github.io/react-native/docs/images.html">https://facebook.github.io/react-native/docs/images.html</a>
 </li>
 </ul>
+
+### Debugging React Native
+
+<ul>
+<li>React Native Debugger:<a href="https://github.com/jhen0409/react-native-debugger"> https://github.com/jhen0409/react-native-debugger</a>
+</li><li>More about Debugging:<a href="https://facebook.github.io/react-native/docs/debugging.html"> https://facebook.github.io/react-native/docs/debugging.html</a>
+</li>
+</ul>
