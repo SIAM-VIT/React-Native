@@ -28,3 +28,28 @@ If you want to learn more about Flexbox, don't miss this awesome article: <a hre
 </li><li>More about Debugging:<a href="https://facebook.github.io/react-native/docs/debugging.html"> https://facebook.github.io/react-native/docs/debugging.html</a>
 </li>
 </ul>
+
+### vAutomatic Linking
+a lot of libraries take some extra steps during the linking process which can't be automated.
+
+For libraries that don't require such extra steps, there is an automated way of linking available though.
+
+You'll need to install an extra package: 
+
+```
+react-native-cli
+``` 
+
+It's actually installed locally in your project already but if you want to run commands with it, you need to install it globally.
+
+Install it globally via 
+```
+npm install -g react-native-cli 
+```
+Thereafter, in your project folder, you can run 
+```
+react-native link 
+```
+ to automatically link all libraries that require linking.
+
+Important: ALWAYS check the docs (e.g. on the Github repo page) of the library you're using! You definitely have to ensure that no additional steps are required!
